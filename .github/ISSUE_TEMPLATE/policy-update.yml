@@ -1,0 +1,44 @@
+name: Policy Update
+description: Report a policy change or update to a source referenced in this repo
+labels: ["policy-update"]
+body:
+  - type: dropdown
+    id: policy_source
+    attributes:
+      label: Policy Source
+      options:
+        - YouTube Platform Policy
+        - EU AI Act (2024/1689)
+        - China 标识办法 + GB 45438
+        - California AB-2655 / SB-942
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: effective_date
+    attributes:
+      label: Effective Date of Change
+      description: When does this change take effect?
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description of Change
+      description: What changed? Include article/section numbers if applicable.
+    validations:
+      required: true
+  - type: input
+    id: source_url
+    attributes:
+      label: Source URL
+      description: Link to official announcement or legislation
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact on Article
+      description: Which sections of the article/timeline/comparison table need updating?
+    validations:
+      required: false
