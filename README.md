@@ -1,4 +1,4 @@
-# YouTube AI Disclosure vs EU AI Act: A 60-Day Head Start
+# AI 视频标注合规指南：YouTube × EU AI Act × 中国标识办法 × 加州 SB-942
 
 > YouTube 2026-06-02 全量启动平台主动检测，距 EU AI Act 2026-08-02 Article 50 全面适用整整 60 天。这 60 天把全球 GenAI 治理的实际起算日，从立法日推到了平台落地日。
 
