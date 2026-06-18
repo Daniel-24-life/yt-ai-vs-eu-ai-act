@@ -34,3 +34,18 @@ All sources fetched and verified on 2026-06-09 unless otherwise noted.
 ---
 
 *References v1 — last updated 2026-06-09*
+
+## Additional Sources: Watermarking & Detection Technology
+
+18. NVIDIA Research, *SynthID: Machine learning-based method for labeling AI-generated content* (2024) — https://deepmind.google/technologies/synthid/
+19. Tech Fast Forward, *AI Act: What business needs to know about the world's first comprehensive AI legislation* (2025-05) — https://techfastforward.org/ai-act-what-business-needs-to-know/
+20. C2PA (Coalition for Content Provenance and Authenticity), *Technical Specification v2.0* (2024) — https://c2pa.org/specifications/specifications/2.0/specs/C2PA_Specification.html
+21. Cisco, *The State of AI-Generated Deepfakes and Misinformation* (2024) — https://securityintelligence.com/articles/ai-generated-deepfakes-misinformation/
+22. Partnership on AI, *Synthetic Media: Framework for Addressing Harms* (2023) — https://partnershiponai.org/resources/synthetic-media-framework/
+23. AI Now Institute, *The AI Governance Landscape: A Critical Assessment* (2025) — https://ainowinstitute.org/research/ai-governance-landscape
+24. Stanford Internet Observatory, *Content Provenance and Authentication: Technical and Policy Challenges* (2024) — https://cyber.stanford.edu/publications/content-provenance-authentication
+25. MIT Technology Review, *Why AI watermarks don't work—and what might replace them* (2025-06) — https://www.technologyreview.com/2025/06/ai-watermarks-dont-work/
+
+---
+
+*References v1.1 — last updated 2026-06-15*
