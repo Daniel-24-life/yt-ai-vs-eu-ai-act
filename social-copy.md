@@ -8,7 +8,7 @@ YouTube 6/2 全量启动 AI 主动检测，距 EU AI Act 8/2 刚好 60 天。
 
 我那条 AI 配音短片被标了三次——前两次根本看不到。
 
-全文 + 17 条参考 + 四辖区对照：
+全文 + 25 条参考 + 四辖区对照：
 https://daniel-24-life.github.io/yt-ai-vs-eu-ai-act/
 
 ---
@@ -33,6 +33,6 @@ YouTube 6/2 主动检测 × EU AI Act 8/2 × 中国《标识办法》× 加州 S
 
 核心判断：GenAI 治理的实际起算日已从立法日切换到平台落地日。
 
-全文 + 17 条参考文献 + 政策原文：
+全文 + 25 条参考文献 + 政策原文：
 https://daniel-24-life.github.io/yt-ai-vs-eu-ai-act/
 GitHub: https://github.com/Daniel-24-life/yt-ai-vs-eu-ai-act
