@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 视频标注合规指南 · YouTube × EU AI Act × 中国标识办法 × 加州 SB-942</title>
+    <meta name="description" content="从创作者第一视角，拆解 YouTube 6/2 主动检测与 EU AI Act 8/2 大限的 60 天窗口期，四辖区合规公约数对照">
+    <meta property="og:title" content="AI 视频标注合规指南">
+    <meta property="og:description" content="一条 AI 配音短片，被标了三次——前两次根本看不到">
+    <meta property="og:image" content="images/cover-wechat.png">
+    <meta property="og:type" content="article">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px 20px;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+        .meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        .meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        h2 {
+            color: #667eea;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+        h3 {
+            color: #764ba2;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        blockquote {
+            border-left: 4px solid #667eea;
+            padding-left: 20px;
+            margin: 20px 0;
+            color: #666;
+            font-style: italic;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95em;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        tr:hover {
+            background: #f0f0f0;
+        }
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+        .warning {
+            background: #f8d7da;
+            padding: 15px;
+            border-left: 4px solid #dc3545;
+            margin: 20px 0;
+        }
+        .info {
+            background: #d1ecf1;
+            padding: 15px;
+            border-left: 4px solid #17a2b8;
+            margin: 20px 0;
+        }
+        .success {
+            background: #d4edda;
+            padding: 15px;
+            border-left: 4px solid #28a745;
+            margin: 20px 0;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        pre code {
+            background: none;
+            padding: 0;
+        }
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .nav {
+            background: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+        .nav h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        .nav li {
+            margin-bottom: 5px;
+        }
+        .nav a {
+            display: block;
+            padding: 8px 12px;
+            border-radius: 3px;
+            transition: background 0.2s;
+        }
+        .nav a:hover {
+            background: #e9ecef;
+            text-decoration: none;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        footer {
+            background: #f8f9fa;
+            padding: 30px 20px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        footer a {
+            color: #667eea;
+        }
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-left: 5px;
+        }
+        .badge-new {
+            background: #28a745;
+            color: white;
+        }
+        .badge-updated {
+            background: #ffc107;
+            color: #333;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            .meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+            table {
+                font-size: 0.85em;
+            }
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AI 视频标注合规指南</h1>
+        <div class="subtitle">YouTube × EU AI Act × 中国标识办法 × 加州 SB-942</div>
+        <div class="meta">
+            <span>📅 最后更新：2026-06-20</span>
+            <span>📖 阅读时间：15 分钟</span>
+            <span>🔖 v3</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="nav">
+            <h3>📑 目录</h3>
+            <ul>
+                <li><a href="#abstract">摘要</a></li>
+                <li><a href="#timeline">1. 时间线：60 天窗口期</a></li>
+                <li><a href="#three-layers">2. 三层标签：你的视频被标了三次</a></li>
+                <li><a href="#watermark">3. 水印技术：根本造不出来</a></li>
+                <li><a href="#omibus">4. "延期"是假消息</a></li>
+                <li><a href="#alignment">5. 一次抢跑，对齐三大辖区</a></li>
+                <li><a href="#outlook">6. 三个判断</a></li>
+                <li><a href="#resources">7. 资源与工具</a></li>
+            </ul>
+        </div>
+
+        <div class="section" id="abstract">
+            <h2>摘要</h2>
+            <p><strong>YouTube 2026-06-02 全量启动平台主动检测，距 EU AI Act 2026-08-02 Article 50 全面适用整整 60 天。这 60 天把全球 GenAI 治理的实际起算日，从立法日推到了平台落地日。</strong></p>
+            <p>5 月 7 日的"AI Act Omnibus"协议被普遍解读为"延期"，实际只给了存量系统在机器可读水印一项上 4 个月宽限至 2026-12-02；chatbot 披露、deepfake 标签、通用型人工智能（GPAI）模型义务全部维持 8/2 零宽限。新系统上线即合规。罚则上限 3500 万欧元或全球营收 7%，高于 GDPR 的 4%。</p>
+            <p>本文从 AI 视频创作者第一视角，论证 YouTube 6/2 主动检测的本质是商业平台对 AI Act Art.50、中国《人工智能生成合成内容标识办法》传播平台核验义务、加州 SB-942 披露路径三大辖区合规公约数的提前对齐；GenAI 治理的实际起算日已从立法日切换到平台落地日。</p>
+        </div>
+
+        <div class="section" id="timeline">
+            <h2>1. 时间线：60 天窗口期</h2>
+            <p><img src="images/timeline-dual-anchor.png" alt="双锚合规时间轴" style="width: 100%; max-width: 100%; height: auto;"></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>日期</th>
+                        <th>事件</th>
+                        <th>来源</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2025-09-01</td>
+                        <td>中国《标识办法》+ GB 45438-2025 同步施行</td>
+                        <td>[5][6]</td>
+                    </tr>
+                    <tr>
+                        <td>2026-01-01</td>
+                        <td>加州 SB-942 生效，罚则 $5,000/天/违规</td>
+                        <td>[7]</td>
+                    </tr>
+                    <tr>
+                        <td>2026-03-10</td>
+                        <td>YouTube 官方 blog 公告 likeness detection 扩展至公职人员、记者</td>
+                        <td>[8]</td>
+                    </tr>
+                    <tr>
+                        <td>2026-05-30</td>
+                        <td>PPC Land 披露 May 2026 disclosure 框架更新</td>
+                        <td>[9]</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td><strong>2026-06-02</strong></td>
+                        <td><strong>YouTube 平台主动检测全量启动（事实锚）</strong></td>
+                        <td>[10]</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td><strong>2026-08-02</strong></td>
+                        <td><strong>AI Act Art.50 / 99 全面适用（制度锚），AB-853 同日生效</strong></td>
+                        <td>[1][2]</td>
+                    </tr>
+                    <tr>
+                        <td>2026-12-02</td>
+                        <td>AI Act 存量系统水印补齐截止（4 个月宽限唯一项）</td>
+                        <td>[3]</td>
+                    </tr>
+                    <tr>
+                        <td>2027-12</td>
+                        <td>AI Act 高风险 AI 义务到期</td>
+                        <td>[3]</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="info">
+                <strong>时间锚说明：</strong>YouTube 主动检测存在三个并行日期——官方 blog 3/10、PPC Land 5/30、xix.ai / TechCrunch 6/2。本文采纳 6/2 作为主锚，对应媒体广泛报道日，也是创作者群体普遍感知到变化的那天。
+            </div>
+        </div>
+
+        <div class="section" id="three-layers">
+            <h2>2. 三层标签：你的视频被标了三次</h2>
+            <p>我那条上周发的 AI 配音短片，被标了三次——前两次根本看不到。</p>
+
+            <h3>2.1 第一层：平台显式标签</h3>
+            <p>YouTube 的 "Altered or synthetic content" 标签，显式 toggle 自 2024-03 上线、2025-05-21 强制执行；2026 年 5 月起前置到播放器与描述区"viewers will actually see"的位置。这层给观众看。</p>
+
+            <h3>2.2 第二层：平台隐式水印</h3>
+            <p>Content ID + C2PA（内容来源认证标准）元数据。用户看不见，但下游抓取工具——剪辑软件、二次分发平台、检测站点——都能机读出来。视频只要离开 YouTube，"AI 出身"已钉在文件里。6/2 之后被强化：YouTube 内部分类器现在主动检测三类触发源——自有 GenAI 工具产物（Veo、Fantasia Canvas 等）、携带 C2PA 元数据的外部内容、分类器命中的疑似肖像合成。</p>
+
+            <h3>2.3 第三层：制度性标记</h3>
+            <ul>
+                <li><strong>EU：</strong>Art.50 §2 要求合成输出"machine-readable + detectable as artificially generated"；§4 要求 deepfake 部署者向自然人明示披露。</li>
+                <li><strong>中国：</strong>《标识办法》要求显式 + 隐式双标识，元数据强制字段包括 AIGC 标识、内容生产者、生产编号。责任链拆成四层：生成方、应用商店、传播平台、用户——用户恶意删除或篡改标识也违法。</li>
+                <li><strong>加州：</strong>SB-942 强制 Latent Disclosure（隐式）字段包括提供商名、AI 系统名+版本、生成日期时间、唯一 ID；同时支持可选 Manifest Disclosure（显式）。</li>
+            </ul>
+            <div class="warning">
+                <strong>三层叠在一起，怪事就来了：</strong>同一条视频，平台标一次，EU 要求部署者再明示一次，中国传播平台看不到标识还要主动补风险提示。三层标记互不通气，合规责任却叠加在创作者头上。
+            </div>
+        </div>
+
+        <div class="section" id="watermark">
+            <h2>3. 水印技术：根本造不出来</h2>
+            <p>Article 50 要求的"经过常规处理不可去除"的机器可读水印，技术上还不成熟。Tech Fast Forward 直接挑明：</p>
+            <blockquote>
+                "Article 50 requires watermarks that are robust and not removable by normal processing; every current approach including SynthID and C2PA has documented failure modes under standard image operations."
+            </blockquote>
+            <p>Google 的 SynthID、行业联盟的 C2PA，截图、裁剪、转码、二次压缩之后都会失效——这些都是用户日常操作。</p>
+            <div class="warning">
+                <strong>立法在追一个还没造出来的标准。</strong>
+            </div>
+        </div>
+
+        <div class="section" id="omibus">
+            <h2>4. "延期"是假消息</h2>
+            <p>5 月 7 日的"AI Act Omnibus"协议被普遍解读为"延期"。实际只给了存量系统在机器可读水印一项上 4 个月宽限至 2026-12-02；chatbot 披露、deepfake 标签、GPAI 模型义务全部维持 8/2 零宽限。新系统上线即合规。</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>日期</th>
+                        <th>义务</th>
+                        <th>宽限</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2026-08-02</td>
+                        <td>Chatbot 必须告知用户在跟 AI 交互</td>
+                        <td><strong>零</strong></td>
+                    </tr>
+                    <tr>
+                        <td>2026-08-02</td>
+                        <td>Deepfake 必须标注</td>
+                        <td><strong>零</strong></td>
+                    </tr>
+                    <tr>
+                        <td>2026-08-02</td>
+                        <td>GPAI 模型义务全面生效</td>
+                        <td><strong>零</strong></td>
+                    </tr>
+                    <tr>
+                        <td>2026-08-02</td>
+                        <td>新系统的机器可读水印</td>
+                        <td><strong>零</strong></td>
+                    </tr>
+                    <tr>
+                        <td>2026-08-02</td>
+                        <td>存量系统的机器可读水印</td>
+                        <td>4 个月</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td><strong>2026-12-02</strong></td>
+                        <td><strong>存量系统水印补齐截止</strong></td>
+                        <td><strong>第二道大限</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>罚则上限 3500 万欧元或全球营收 7%——高于 GDPR 的 4%。</p>
+        </div>
+
+        <div class="section" id="alignment">
+            <h2>5. 一次抢跑，对齐三大辖区</h2>
+            <p><img src="images/four-source-comparison.png" alt="四源合规对照" style="width: 100%; max-width: 100%; height: auto;"></p>
+            <p>YouTube 6/2 上线的 detect + disclose + 主体申诉，恰好同时对齐三大辖区的合规公约数：</p>
+            <ul>
+                <li>AI Act Art.50 透明度义务</li>
+                <li>中国《标识办法》传播平台核验义务</li>
+                <li>加州 SB-942 披露路径</li>
+            </ul>
+            <p>对创作者而言，路径只剩"标记 + 披露 + 工具"，"强删"已被堵死。</p>
+        </div>
+
+        <div class="section" id="outlook">
+            <h2>6. 三个判断</h2>
+            <p>合规没有"应对一次"这种说法。8/2 之后紧跟着 12/2 存量系统补水印截止；加州 AB-853 同样卡在 8/2；欧盟成员国主管机关下半年陆续到位，第一批 Art.50 / 第 99 条典型化执法大概率在 8/2 之后几个月内出现。3500 万欧元或 7% 全球营收这把刀挂在那儿，是真要落下来的。</p>
+            <p>对创作者而言，三个判断要先做出来：</p>
+            <ol>
+                <li><strong>平台落地日 ≠ 立法生效日，但合规义务从前者起算。</strong>盯紧"我常用的平台"在不在主动检测，比盯"哪国哪法什么时候生效"更实用。</li>
+                <li><strong>三层标记叠加是常态，互相不通气。</strong>同一条 AI 内容在不同辖区可能被不同主体重复标记，合规责任在创作者侧叠加。</li>
+                <li><strong>水印技术尚无可用标准是机会窗口。</strong>EU AI Office 也承认水印技术不成熟——技术路线、字段格式、互操作规范还有定义空间。</li>
+            </ol>
+            <p>12/2/2026 第二道大限会再来一次。8/2 之后首批典型化执法落地时，会出现第一次"算法性裁判 vs 创作者举证"的拉锯。本文将以 v2 版本在 8/2 后复盘。</p>
+        </div>
+
+        <div class="section" id="resources">
+            <h2>7. 资源与工具</h2>
+            
+            <h3>📋 创作者自检工具</h3>
+            <ul>
+                <li><a href="creator-checklist_v1.md">创作者合规自检 Checklist</a> — 发布前 5 分钟过一遍</li>
+                <li><a href="FAQ_v1.md">FAQ 常见问题预判</a> — 评论区高频问题预答</li>
+            </ul>
+
+            <h3>📚 完整文档</h3>
+            <ul>
+                <li><a href="README.md">GitHub 完整版</a> — 完整参考文献 + 深度分析</li>
+                <li><a href="draft_v1.md">微信公众号版</a> — 精简参考文献 + 二维码</li>
+                <li><a href="zhihu-article_v1.md">知乎/即刻长文版</a></li>
+                <li><a href="twitter-thread_v1.md">Twitter Thread</a> — 10 条推文</li>
+                <li><a href="xiaohongshu-v1.md">小红书图文版</a> — 2 条笔记</li>
+            </ul>
+
+            <h3>🔧 技术工具</h3>
+            <ul>
+                <li><a href="https://contentcredentials.org/verify" target="_blank">Content Credentials Explorer</a> — C2PA 元数据检查</li>
+                <li><a href="https://mediaarea.net/MediaInfo" target="_blank">MediaInfo</a> — 视频元数据查看</li>
+                <li><a href="https://support.google.com/youtube/answer/14328491" target="_blank">YouTube AI 标签说明</a></li>
+            </ul>
+
+            <h3>📖 政策原文</h3>
+            <ul>
+                <li><a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-50" target="_blank">EU AI Act Art.50 原文</a></li>
+                <li><a href="https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm" target="_blank">中国《标识办法》全文</a></li>
+                <li><a href="https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240SB942" target="_blank">加州 SB-942 全文</a></li>
+            </ul>
+
+            <h3>🗺️ 项目路线图</h3>
+            <ul>
+                <li><a href="v2-roadmap.md">v2 版本路线图</a> — 8/2 后更新计划</li>
+                <li><a href="SOP_v1.md">项目 SOP</a> — 5 阶段完整流程</li>
+                <li><a href="data-tracking_v1.md">T+7d 数据回流模板</a></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>后记：写完才发现</h2>
+            <p>这篇文章写完存档的时候，我发现项目空间已经给文件头自动塞了一段 AI 生成内容标识的 frontmatter。我没勾任何选项。</p>
+            <p>这跟开头那条视频的情况一模一样——"我没点它，它自己出现了"。6/2 那天是 YouTube 替我打了标签，今天是我的写作工具替我盖了戳。标记这件事，已经不需要你同意了。</p>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>AI 视频标注合规指南</strong> · v3 · 2026-06-20</p>
+        <p>GitHub: <a href="https://github.com/Daniel-24-life/yt-ai-vs-eu-ai-act" target="_blank">Daniel-24-life/yt-ai-vs-eu-ai-act</a></p>
+        <p>25 条参考文献 · 四辖区政策对照 · 全渠道分发素材</p>
+    </footer>
+</body>
+</html>
